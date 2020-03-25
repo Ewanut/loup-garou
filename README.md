@@ -22,7 +22,7 @@ Je vous invite à regarder la vidéo de [Human Talks Paris](https://www.youtube.
 Quelques petites questions :
 
 - Résumer en une phrase l'intérêt de Material UI
-Material UI propose des composants React pour un développement web plus rapide et plus simple. On peut confectionner son propre thème graphique. 
+<!-- Material UI propose des composants React pour un développement web plus rapide et plus simple. On peut confectionner son propre thème graphique. -->
 - Comment importer `material-ui` dans un fichier ?
 <!-- On importe ses composants: import Button from '@material-ui/core/Button';
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
