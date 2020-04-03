@@ -1,31 +1,36 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
-// import white from '@material-ui/core/colors/white';
-// import black from '@material-ui/core/colors/black';
+import { MuiThemeProvider, createMuiTheme, withStyles} from '@material-ui/core/styles';
 
 
-const ButtonMUI = (props) => {
+const Header = (props) => {
   const { onClick, children } = props;
   return (
   	<MuiThemeProvider theme={theme}>
-  		<div className={props.classes.btn}>
-  			<Button color='primary' >{props.title}</Button>
+  		<div>
+  			<header className={props.classes.header}>
+  				<h1 className={props.classes.titre}>Bienvenue sur le jeu du Loup-Garou en ligne !</h1>
+  			</header>
   		</div>
   	</MuiThemeProvider>	);
 }
 
 const styles={
-  btn:{
+  header:{
+    backgroundColor: "brown",
+    padding:'20px',
     textAlign: 'center',
-    marginTop:'50px'
+    color : 'white',
+  },
+  titre:{
+  	margin: 0
   }
 };
 
 const theme = createMuiTheme({
   palette:{
     primary: {
-      main: '#000000',
+      main: '#FFFFFF',
     },
   },
   typography : {
@@ -42,4 +47,4 @@ const theme = createMuiTheme({
   }
 });
 
-export default withStyles(styles)(ButtonMUI);
+export default withStyles(styles)(Header);

@@ -46,9 +46,9 @@ export const GameProvider = props => {
   if (error) {
     return <div>Erreur... {error}</div>;
   }
-  if (loading) {
-    return <div>Chargement du master game en cours...</div>;
-  }
+  // if (loading) {
+  //   return <div>Chargement du master game en cours...</div>;
+  // }
 
   const {children} = props;
   return (

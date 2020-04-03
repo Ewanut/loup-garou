@@ -3,50 +3,25 @@ import { Link } from 'react-router-dom';
 import { useSession } from '../services/User';
 import { createGame } from '../services/MasterGame';
 import Button from '@material-ui/core/Button';
-import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
-import blue from '@material-ui/core/colors/blue'
-import red from '@material-ui/core/colors/red'
+import ButtonMUI from '../components/Button';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 const Start = (props) => {
   const { user } = useSession();
-  return (
-    <MuiThemeProvider theme={theme}>
+  return ( 
     <div>
-      <Button color="primary" className={props.classes.myLeftButton}><Link className="Link" to="/create" onClick={() => createGame(user)}> Nouvelle partie
-      </Link></Button>
+    <Header/>
+      <ButtonMUI color="main" title='Nouvelle partie'><Link className="Link" to="/create"  onClick={() => createGame(user)}> Nouvelle partie
+      </Link></ButtonMUI>
       <br />
-      <Button color="secondary"><Link className="Link" to="/join">
+      <ButtonMUI title='Rejoindre une partie'><Link className="Link" to="/join">
         Rejoindre une partie
-      </Link></Button>
+      </Link></ButtonMUI> 
+      <Footer/>
     </div>
-    </MuiThemeProvider>
   );
 }
 
-const styles={
-  myLeftButton:{
-    backgroundColor: "blue"
-  }
-};
-
-const theme = createMuiTheme({
-  palette:{
-    primary: blue,
-    secondary: red,
-  },
-  typography : {
-    fontSize: 25,
-    fontFamily:'Montserrat',
-  },
-  overrides:{
-    MuiButton:{
-      root:{
-        backgroundColor: "red",
-        "&:hover":{backgroundColor: "yellow"}
-      }
-    }
-  }
-});
-
-export default withStyles(styles)(Start);
+export default Start;
